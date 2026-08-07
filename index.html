@@ -67,9 +67,39 @@
         .dark ::-webkit-scrollbar-thumb {
             background: #334155; 
         }
+  /* Announcement Bar */
+.announcement-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.announcement-track {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 18s linear infinite;
+}
+
+@keyframes scroll-left {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-300 font-sans min-h-screen flex flex-col overflow-x-hidden">
+<body class="pt-10 bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 transition-colors duration-300 font-sans min-h-screen flex flex-col overflow-x-hidden">
+  <div class="announcement-bar bg-primary text-white text-sm md:text-base py-2 shadow-md">
+  <div class="announcement-track font-medium tracking-wide">
+       ICoP 2026 has concluded. Thank you for making it such a memorable event — see you next time!   &nbsp; • &nbsp;
+       ICoP 2026 has concluded. Thank you for making it such a memorable event — see you next time!   &nbsp; • &nbsp;
+       ICoP 2026 has concluded. Thank you for making it such a memorable event — see you next time!   &nbsp; • &nbsp;
+  </div>
+</div>
+
 <div class="fixed top-4 right-4 z-50 lg:hidden">
 <button class="flex items-center justify-center w-10 h-10 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur shadow-lg text-primary dark:text-white hover:bg-white dark:hover:bg-slate-700 transition-all" onclick="document.documentElement.classList.toggle('dark')">
 <span class="material-icons text-xl">brightness_medium</span>
@@ -122,16 +152,6 @@
 </a>
 </li>
 
-<!-- EVENT AND ACCOMODATION -->
-<li class="group cursor-pointer">
-<a class="block" href="location.html">
-<span class="block text-4xl lg:text-5xl font-display text-slate-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-purple-300 transition-colors duration-300 italic group-hover:not-italic">
-                                Venues & Stays
-                            </span>
-<span class="text-sm text-slate-500 dark:text-slate-400 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">Locate the spots</span>
-</a>
-</li>
-
 <!-- SPEAKERS -->
 <li class="group cursor-pointer">
 <a class="block" href="speakers.html">
@@ -141,29 +161,28 @@
 <span class="text-sm text-slate-500 dark:text-slate-400 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">Meet the experts</span>
 </a>
 </li>
-<!-- Photos link - to be switched on on Day 2
-<li class="group cursor-pointer">
-<a class="block" href="https://scan.page/U4kCUm">
-<span class="block text-4xl lg:text-5xl font-display text-slate-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-purple-300 transition-colors duration-300 italic group-hover:not-italic">
-                                Event Photos
-                            </span>
-<span class="text-sm text-slate-500 dark:text-slate-400 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">See event highlights</span>
-</a>
-</li>
--->
 
-<!-- Abstract book link - to be switched on on Day 2
+<!-- Abstract book link - to be switched on on Day 2 -->
 <li class="group cursor-pointer">
-<a class="block" href="https://scan.page/U4kCUm">
+<a class="block" href="https://drive.google.com/file/d/10B9RdtUcIy6iuGga8-UxCKtzspi0Z1X2/view?usp=drive_link">
 <span class="block text-4xl lg:text-5xl font-display text-slate-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-purple-300 transition-colors duration-300 italic group-hover:not-italic">
                                 Abstract book
                             </span>
 <span class="text-sm text-slate-500 dark:text-slate-400 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">Explore research abstracts</span>
 </a>
 </li>
--->
 
-<!-- Feedback link - to be switched on on Day 2
+  <!-- Photos link - to be switched on on Day 2 -->
+<li class="group cursor-pointer">
+<a class="block" href="https://drive.google.com/drive/folders/13dvaGa8bDVCvoq4RYx58t1ZDZ5LZXxLz?usp=sharing">
+<span class="block text-4xl lg:text-5xl font-display text-slate-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-purple-300 transition-colors duration-300 italic group-hover:not-italic">
+                                Event Photos
+                            </span>
+<span class="text-sm text-slate-500 dark:text-slate-400 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">See event highlights</span>
+</a>
+</li>
+
+  <!-- Feedback link - to be switched on on Day 2 
 <li class="group cursor-pointer">
 <a class="block" href="https://scan.page/U4kCUm">
 <span class="block text-4xl lg:text-5xl font-display text-slate-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-purple-300 transition-colors duration-300 italic group-hover:not-italic">
@@ -172,7 +191,18 @@
 <span class="text-sm text-slate-500 dark:text-slate-400 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">Help us improve!</span>
 </a>
 </li>
+
 -->
+
+<!-- EVENT AND ACCOMODATION -->
+<li class="group cursor-pointer">
+<a class="block" href="location.html">
+<span class="block text-4xl lg:text-5xl font-display text-slate-800 dark:text-slate-100 group-hover:text-primary dark:group-hover:text-purple-300 transition-colors duration-300 italic group-hover:not-italic">
+                                Venues & Stays
+                            </span>
+<span class="text-sm text-slate-500 dark:text-slate-400 mt-2 block opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0">Locate the spots</span>
+</a>
+</li>
 
 <!-- SPONSORS -->
 <li class="group cursor-pointer">
